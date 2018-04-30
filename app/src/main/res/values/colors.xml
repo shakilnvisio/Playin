@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- -->
+    <!--General-->
+    <color name="colorPrimary">#364052</color>
+    <color name="colorPrimaryDark">#252c39</color>
+    <color name="colorAccent">#4478d6</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="general_error_color">#DB4F5D</color>
+    <color name="general_text_secondary">#9BA6B9</color>
+    <color name="general_text_permary_black">#262D39</color>
+
+    <!--General Button-->
+    <color name="button_color">#29CCB1</color>
+    <color name="selected_button_color">#7C8AA3</color>
+    <color name="not_selected_button">#455167</color>
+    <!--Lobby Map-->
+    <color name="game_card_yellow">#F5BD50</color>
+    <color name="game_card_text_normal">#32353C</color>
+    <color name="game_card_text_bold">#2C303A</color>
+    <color name="game_card_arrow_color">#C8CEDB</color>
+
+    <!--Badge-->
+    <color name="badge_red">#DC4D5B</color>
+    <color name="badge_green">#2DC8B0</color>
+    <color name="badge_blue">#3CAEDF</color>
+</resources>
