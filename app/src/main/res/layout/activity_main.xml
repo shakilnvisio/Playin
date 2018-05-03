@@ -40,16 +40,16 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:src="@drawable/pic"
-                        android:id="@+id/userImage"
+                        android:id="@+id/ManagerImage"
                         android:layout_centerVertical="true"
                         />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Shakil Ahmed"
-                        android:id="@+id/name"
-                        android:layout_toEndOf="@id/userImage"
-                        android:layout_toRightOf="@id/userImage"
+                        android:id="@+id/ManagerName"
+                        android:layout_toEndOf="@id/ManagerImage"
+                        android:layout_toRightOf="@id/ManagerImage"
                         android:layout_marginLeft="10dp"
                         android:fontFamily="@font/open_sans_regular"
                         android:layout_centerVertical="true"
@@ -65,23 +65,20 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            style="@style/Badge_Style_Red"
-                            android:text="Soon"
+                            android:id="@+id/slot_three"
                             android:layout_gravity="center_vertical"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            style="@style/Badge_Style_Green"
-                            android:text="Organizer"
                             android:layout_marginLeft="4dp"
+                            android:id="@+id/slot_two"
                             android:layout_gravity="center_vertical"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            style="@style/Badge_Style_Blue"
-                            android:text="In"
                             android:layout_marginLeft="4dp"
                             android:layout_marginRight="23dp"
+                            android:id="@+id/slot_one"
                             android:layout_gravity="center_vertical"/>
                     </LinearLayout>
                 </RelativeLayout>
@@ -132,7 +129,7 @@
                         android:fontFamily="@font/opensans_bold"
                         android:layout_centerVertical="true"
                         android:textColor="@color/game_card_yellow"
-                        android:id="@+id/needed"
+                        android:id="@+id/playerNeeded"
                         />
                     <TextView
                         android:layout_width="wrap_content"
@@ -141,6 +138,7 @@
                         android:layout_centerVertical="true"
                         android:layout_marginRight="23dp"
                         android:text="17:30 pm"
+                        android:id="@+id/GameTime"
                         android:fontFamily="@font/opensans_bold"
                         android:textColor="@color/game_card_text_bold"/>
                 </RelativeLayout>
@@ -156,6 +154,7 @@
                         android:textColor="@color/game_card_text_normal"
                         android:layout_marginTop="5dp"
                         android:layout_marginLeft="51dp"
+                        android:id="@+id/venue"
                         android:layout_marginStart="51dp" />
                 </RelativeLayout>
 
