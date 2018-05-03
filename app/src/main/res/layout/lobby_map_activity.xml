@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <RelativeLayout
+        style="@style/Toolbar_Custom"
+        android:id="@+id/toolbarContainer">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true">
+            <TextView
+                style="@style/lobby_toolbar_button"
+                android:text="@string/map"
+                android:background="@drawable/selected_button_right"
+                android:id="@+id/mapButton"
+                android:clickable="true"
+                android:layout_centerVertical="true"
+                android:focusable="true"
+                android:onClick="MapClicked"/>
+            <TextView
+                style="@style/lobby_toolbar_button"
+                android:text="@string/list"
+                android:background="@drawable/unselected_button_left"
+                android:id="@+id/listButton"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:layout_toRightOf="@id/mapButton"
+                android:layout_toEndOf="@id/mapButton"
+                android:focusable="true"
+                android:onClick="ListClicked"/>
+        </RelativeLayout>
+            <Button
+                android:layout_width="@dimen/toolbar_button_width"
+                android:layout_height="@dimen/toolbar_button_height"
+                android:background="@drawable/ic_filter_list_white24dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/toolbar_margin"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/toolbar_margin"
+                android:onClick="FilterClicked"/>
+        <Button
+            android:layout_width="@dimen/toolbar_button_width"
+            android:layout_height="@dimen/toolbar_button_height"
+            android:background="@drawable/ic_navigate_white_24dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/toolbar_margin"
+            android:layout_marginStart="@dimen/toolbar_margin"
+            android:onClick="NavigationClicked"/>
+
+    </RelativeLayout>
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/mapView"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbarContainer" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/arrow_up_button"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="ArrowUpClicked"/>
+
+</RelativeLayout>

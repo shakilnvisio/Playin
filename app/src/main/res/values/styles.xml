@@ -8,9 +8,24 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- Toolbar -->
+    <style name="Toolbar_Custom">
+        <item name="android:layout_height">@dimen/toolbar_height</item>
+        <item name="android:layout_width">match_parent</item>'
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <!-- Lobby Map-->
+    <style name="lobby_toolbar_button">
+        <item name="android:layout_height">@dimen/lobby_map_toolbar_button_height</item>
+        <item name="android:layout_width">@dimen/lobby_map_toolbar_button_width</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/open_sans_regular</item>
+        <item name="android:gravity">center</item>
+
+    </style>
     <!-- BADGE-->
-    <style name="Badge_Style_Red">
-    <item name="android:background">@drawable/badge_red</item>
+    <style name="Badge_Style">
     <item name="android:textSize">8sp</item>
     <item name="android:textStyle">bold</item>
     <item name="android:textColor">@color/white</item>
@@ -18,27 +33,6 @@
     <item name="android:paddingBottom">2dp</item>
     <item name="android:paddingLeft">8dp</item>
     <item name="android:paddingRight">8dp</item>
-    </style>
-
-    <style name="Badge_Style_Green">
-        <item name="android:background">@drawable/badge_green</item>
-        <item name="android:textSize">8sp</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:paddingTop">2dp</item>
-        <item name="android:paddingBottom">2dp</item>
-        <item name="android:paddingLeft">8dp</item>
-        <item name="android:paddingRight">8dp</item>
-    </style>
-    <style name="Badge_Style_Blue">
-        <item name="android:background">@drawable/badge_blue</item>
-        <item name="android:textSize">8sp</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:paddingTop">2dp</item>
-        <item name="android:paddingBottom">2dp</item>
-        <item name="android:paddingLeft">8dp</item>
-        <item name="android:paddingRight">8dp</item>
     </style>
 
 </resources>

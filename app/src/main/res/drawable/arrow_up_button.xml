@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+       <shape android:shape="oval">
+           <size android:width="@dimen/circle_button_size"
+               android:height="@dimen/circle_button_size"/>
+           <solid android:color="@color/colorPrimary" />
+       </shape>
+    </item>
+    <item android:drawable="@drawable/arrow_up_24dp"
+        android:gravity="center"/>
+
+
+
+</layer-list>

@@ -1,4 +1,9 @@
 <resources>
+    <!-- -->
     <string name="app_name">Playin</string>
     <string name="api_key_map">AIzaSyCQgOxPWXRzwka4wkKTQOUjLWADlXRA8dI</string>
+    <!--Lobby Map-->
+    <string name="map">Map</string>
+    <string name="list">List</string>
+    <string name="create_a_game">Create Game</string>
 </resources>
