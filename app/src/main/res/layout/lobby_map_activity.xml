@@ -88,7 +88,13 @@
             android:layout_height="match_parent"
             android:layout_marginTop="25dp"
             android:background="#BF364052">
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:id="@+id/gameCardRecycler">
 
+            </android.support.v7.widget.RecyclerView>
         </RelativeLayout>
 
     </RelativeLayout>

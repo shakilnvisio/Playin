@@ -9,5 +9,6 @@
     <!--Lobby Map-->
     <dimen name="lobby_map_toolbar_button_width">90dp</dimen>
     <dimen name="lobby_map_toolbar_button_height">28dp</dimen>
+    <dimen name="lobby_map_game_card_height">130dp</dimen>
 
 </resources>

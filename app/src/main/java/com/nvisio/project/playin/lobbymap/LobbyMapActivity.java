@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -21,6 +22,8 @@ import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.nvisio.project.playin.R;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import permissions.dispatcher.NeedsPermission;
 import permissions.dispatcher.RuntimePermissions;
 
@@ -29,6 +32,7 @@ public class LobbyMapActivity extends AppCompatActivity {
     private SupportMapFragment mapFragment;
     private GoogleMap mMap;
     private OnMapReadyCallback onMapReadyCallback;
+    @BindView(R.id.gameCardRecycler)RecyclerView gameCardRecycler;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +43,7 @@ public class LobbyMapActivity extends AppCompatActivity {
             window.setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimary));
         }
         setContentView(R.layout.lobby_map_activity);
-
+        ButterKnife.bind(this);
         onMapReadyCallback=this::MapReady;
         MapInitialise();
         LobbyMapActivityPermissionsDispatcher.CallMapWithPermissionCheck(LobbyMapActivity.this);
