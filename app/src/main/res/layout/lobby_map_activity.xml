@@ -64,39 +64,69 @@
         android:layout_height="match_parent"
         android:layout_below="@id/toolbarContainer" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/arrow_up_button"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:clickable="true"
-        android:focusable="true"
-        android:onClick="ArrowUpClicked"/>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_alignParentBottom="true">
+        android:layout_height="250dp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/rootContainerLobbyMap">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrow_up_button"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="ArrowUpClicked"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/cardContainer"
+        android:visibility="visible">
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/arrow_down_button"
-            android:layout_centerHorizontal="true"/>
+            android:layout_centerHorizontal="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="ArrowDownClicked"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="25dp"
-            android:background="#BF364052">
+            android:background="#BF364052"
+            android:id="@+id/blur">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:id="@+id/bluredImage"/>
             <android.support.v7.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:id="@+id/gameCardRecycler">
 
             </android.support.v7.widget.RecyclerView>
         </RelativeLayout>
-
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:text="Create a Game"
+            android:background="@drawable/create_game_button"
+            android:fontFamily="@font/open_sans_semibold"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"/>
     </RelativeLayout>
 
 </RelativeLayout>

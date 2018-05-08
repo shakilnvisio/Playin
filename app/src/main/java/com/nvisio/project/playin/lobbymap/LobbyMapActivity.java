@@ -1,17 +1,23 @@
 package com.nvisio.project.playin.lobbymap;
 
 import android.Manifest;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -21,7 +27,10 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.nvisio.project.playin.R;
+import com.nvisio.project.playin.adapter.GameCardAdapter;
+import com.nvisio.project.playin.demo.GameCardDEMO;
 
+import at.favre.lib.dali.Dali;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import permissions.dispatcher.NeedsPermission;
@@ -32,7 +41,12 @@ public class LobbyMapActivity extends AppCompatActivity {
     private SupportMapFragment mapFragment;
     private GoogleMap mMap;
     private OnMapReadyCallback onMapReadyCallback;
+    private GameCardAdapter adapter;
+    private GameCardAdapter.GameCardSelected gameCardSelected;
     @BindView(R.id.gameCardRecycler)RecyclerView gameCardRecycler;
+    @BindView(R.id.blur)RelativeLayout blurry;
+    @BindView(R.id.bluredImage)ImageView imageView;
+    @BindView(R.id.cardContainer)RelativeLayout cardContainer;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,26 +58,62 @@ public class LobbyMapActivity extends AppCompatActivity {
         }
         setContentView(R.layout.lobby_map_activity);
         ButterKnife.bind(this);
+        recyclerviewInit();
+        Dali.create(this).load(R.drawable.mapblur).blurRadius(20).downScale(2).concurrent().reScale().skipCache().into(imageView);
+        demoData(true);
         onMapReadyCallback=this::MapReady;
         MapInitialise();
         LobbyMapActivityPermissionsDispatcher.CallMapWithPermissionCheck(LobbyMapActivity.this);
+        gameCardSelected=new GameCardAdapter.GameCardSelected() {
+            @Override
+            public void GameCardClicked(int p) {
+                Toast.makeText(LobbyMapActivity.this, "position: "+p, Toast.LENGTH_SHORT).show();
+            }
+        };
         Log.d("log>>","start");
+    }
+
+    private void recyclerviewInit(){
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        gameCardRecycler.setLayoutManager(linearLayoutManager);
+    }
 
 
+    private void demoData(boolean insert){
+        if (insert){
+            GameCardDEMO demo=new GameCardDEMO();
+            Log.d("ss>>","insert");
+            demo.GameCardDemoDataInsert();
+            Log.d("ss>>","now: "+demo.getDataModels().size());
+            adapter=new GameCardAdapter(this,demo.getDataModels());
+            gameCardRecycler.setAdapter(adapter);
+            adapter.setOnClicked(gameCardSelected);
+            //demoData(false);
+        }
+        else{
+            GameCardDEMO demo=new GameCardDEMO();
+
+            Log.d("ss>>",""+demo.getDataModels().size());
+            adapter=new GameCardAdapter(this,demo.getDataModels());
+            gameCardRecycler.setAdapter(adapter);
+
+        }
+    }
+
+    private void AddToRecAdapter(){
 
     }
 
     @NeedsPermission({Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.ACCESS_COARSE_LOCATION})
     void CallMap(){
       mapFragment.getMapAsync(onMapReadyCallback);
-        Log.d("log>>","callmap");
 
     }
     private void MapReady(GoogleMap googleMap){
-        Log.d("log>>","map ready");
         mMap = googleMap;
         MapStyleOptions styleOptions=MapStyleOptions.loadRawResourceStyle(LobbyMapActivity.this,R.raw.document);
-       mMap.setMapStyle(styleOptions);
+        mMap.setMapStyle(styleOptions);
 
         MarkerOptions markerOptions=new MarkerOptions();
         markerOptions.position(new LatLng(44.968046,-94.420307));
@@ -99,5 +149,17 @@ public class LobbyMapActivity extends AppCompatActivity {
     }
 
     public void ArrowUpClicked(View view) {
+        //demoData(false);
+        cardContainer.setVisibility(View.VISIBLE);
+        gameCardRecycler.setVisibility(View.INVISIBLE);
+        YoYo.with(Techniques.FadeIn).duration(10000).playOn(cardContainer);
+        YoYo.with(Techniques.FadeIn).duration(5000).playOn(imageView);
+        YoYo.with(Techniques.BounceIn).duration(10000).playOn(gameCardRecycler);
+        gameCardRecycler.setVisibility(View.VISIBLE);
+
+    }
+
+    public void ArrowDownClicked(View view) {
+        YoYo.with(Techniques.SlideOutDown).duration(10000).playOn(cardContainer);
     }
 }

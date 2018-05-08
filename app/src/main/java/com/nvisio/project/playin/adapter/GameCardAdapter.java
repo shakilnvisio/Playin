@@ -1,6 +1,7 @@
 package com.nvisio.project.playin.adapter;
 
 import android.content.Context;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,6 +11,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.annotation.GlideOption;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
 import com.nvisio.project.playin.R;
 import com.nvisio.project.playin.models.GameCardDataModel;
 import com.nvisio.project.playin.utils.GameCardUtils;
@@ -55,16 +59,24 @@ public class GameCardAdapter extends RecyclerView.Adapter<GameCardAdapter.Recycl
     @Override
     public void onBindViewHolder(RecyclerViewHolders holder, int position) {
         GameCardDataModel itemDeals = Items.get(position);
+        RequestOptions options=new RequestOptions().override(50,50).diskCacheStrategy(DiskCacheStrategy.ALL);
         holder.managerName.setText(itemDeals.getName());
-        Glide.with(context).load(itemDeals.getImageLink()).into(holder.managerImage);
+        Glide.with(context).load(itemDeals.getImageLink()).apply(options).into(holder.managerImage);
         holder.playerCount.setText(gameCardUtils.playerStatusInStr(itemDeals.getTotalPlayer(),itemDeals.getPlayerIn()));
         holder.playerNeeded.setText(gameCardUtils.playerNeededInStr(itemDeals.getTotalPlayer(),itemDeals.getPlayerIn()));
         holder.gameTime.setText(itemDeals.getTime());
         holder.venue.setText(itemDeals.getVenue());
 
         if (itemDeals.isOrganizar()){
-           
+            holder.slotOne.setText("Organizer");
+            holder.slotOne.setBackground(ContextCompat.getDrawable(context,R.drawable.badge_organizer));
         }
+
+        if (itemDeals.isJoined()){
+            holder.slotTwo.setText("In");
+            holder.slotTwo.setBackground(ContextCompat.getDrawable(context,R.drawable.badge_in));
+        }
+
 
 
     }
@@ -92,7 +104,7 @@ public class GameCardAdapter extends RecyclerView.Adapter<GameCardAdapter.Recycl
             super(itemView);
             ButterKnife.bind(this,itemView);
             //itemView.setOnClickedListener(this);
-            container.setOnClickListener(this);
+            //container.setOnClickListener(this);
 
             //
         }
