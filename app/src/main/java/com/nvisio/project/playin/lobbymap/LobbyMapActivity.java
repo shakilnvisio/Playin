@@ -6,10 +6,13 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -44,10 +47,12 @@ public class LobbyMapActivity extends AppCompatActivity {
     private OnMapReadyCallback onMapReadyCallback;
     private GameCardAdapter adapter;
     private GameCardAdapter.GameCardSelected gameCardSelected;
+    private Boolean isOpened=false;
     @BindView(R.id.gameCardRecycler)RecyclerView gameCardRecycler;
     @BindView(R.id.blur)RelativeLayout blurry;
     @BindView(R.id.bluredImage)ImageView imageView;
     @BindView(R.id.cardContainer)RelativeLayout cardContainer;
+    @BindView(R.id.drawer_layout)DrawerLayout drawerLayout;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,8 +62,10 @@ public class LobbyMapActivity extends AppCompatActivity {
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             window.setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimary));
         }
-        setContentView(R.layout.lobby_map_activity);
+        //setContentView(R.layout.lobby_map_activity);
+        setContentView(R.layout.drawer);
         ButterKnife.bind(this);
+
         recyclerviewInit();
         Dali.create(this).load(R.drawable.mapblur).blurRadius(20).downScale(2).concurrent().reScale().skipCache().into(imageView);
         demoData(true);
@@ -152,6 +159,7 @@ public class LobbyMapActivity extends AppCompatActivity {
     }
 
     public void NavigationClicked(View view) {
+       drawerLayout.openDrawer(Gravity.LEFT);
     }
 
     public void ArrowUpClicked(View view) {
