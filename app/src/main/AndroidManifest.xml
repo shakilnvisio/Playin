@@ -23,6 +23,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
+        <activity android:name=".lobbymap.LobbyMapListView"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimary">
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardPreventCornerOverlap="false"
+        android:id="@+id/toolbarContainer"
+        app:cardElevation="5dp">
+        <RelativeLayout
+            style="@style/Toolbar_Custom">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true">
+                <TextView
+                    style="@style/lobby_toolbar_button"
+                    android:text="@string/map"
+                    android:background="@drawable/unselected_button_right"
+                    android:id="@+id/mapButton"
+                    android:clickable="true"
+                    android:layout_centerVertical="true"
+                    android:focusable="true"
+                    android:onClick="MapClicked"/>
+                <TextView
+                    style="@style/lobby_toolbar_button"
+                    android:text="@string/list"
+                    android:background="@drawable/selected_button_left"
+                    android:id="@+id/listButton"
+                    android:layout_centerVertical="true"
+                    android:clickable="true"
+                    android:layout_toRightOf="@id/mapButton"
+                    android:layout_toEndOf="@id/mapButton"
+                    android:focusable="true"
+                    android:onClick="ListClicked"/>
+            </RelativeLayout>
+            <Button
+                android:layout_width="@dimen/toolbar_button_width"
+                android:layout_height="@dimen/toolbar_button_height"
+                android:background="@drawable/ic_filter_list_white24dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/toolbar_margin"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/toolbar_margin"
+                android:onClick="FilterClicked"/>
+            <Button
+                android:layout_width="@dimen/toolbar_button_width"
+                android:layout_height="@dimen/toolbar_button_height"
+                android:background="@drawable/ic_navigate_white_24dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/toolbar_margin"
+                android:layout_marginStart="@dimen/toolbar_margin"
+                android:onClick="NavigationClicked"/>
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:id="@+id/gameCardList"
+        android:layout_below="@id/toolbarContainer"
+        android:layout_above="@id/creategame"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp">
+
+    </android.support.v7.widget.RecyclerView>
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:text="Create a Game"
+            android:id="@+id/creategame"
+            android:background="@drawable/create_game_button"
+            android:fontFamily="@font/open_sans_semibold"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:clickable="true"
+            android:onClick="CreateGameClicked"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:focusable="true" />
+
+</RelativeLayout>

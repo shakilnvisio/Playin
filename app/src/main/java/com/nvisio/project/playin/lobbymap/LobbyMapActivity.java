@@ -1,6 +1,7 @@
 package com.nvisio.project.playin.lobbymap;
 
 import android.Manifest;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -107,7 +108,7 @@ public class LobbyMapActivity extends AppCompatActivity {
 
     @NeedsPermission({Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.ACCESS_COARSE_LOCATION})
     void CallMap(){
-      mapFragment.getMapAsync(onMapReadyCallback);
+      //mapFragment.getMapAsync(onMapReadyCallback);
 
     }
     private void MapReady(GoogleMap googleMap){
@@ -140,6 +141,11 @@ public class LobbyMapActivity extends AppCompatActivity {
     }
 
     public void ListClicked(View view) {
+        Intent intent=new Intent(LobbyMapActivity.this,LobbyMapListView.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+        overridePendingTransition(R.anim.right_to_left_enter,R.anim.right_to_left_exit);
     }
 
     public void FilterClicked(View view) {
@@ -151,15 +157,15 @@ public class LobbyMapActivity extends AppCompatActivity {
     public void ArrowUpClicked(View view) {
         //demoData(false);
         cardContainer.setVisibility(View.VISIBLE);
-        gameCardRecycler.setVisibility(View.INVISIBLE);
-        YoYo.with(Techniques.FadeIn).duration(10000).playOn(cardContainer);
-        YoYo.with(Techniques.FadeIn).duration(5000).playOn(imageView);
-        YoYo.with(Techniques.BounceIn).duration(10000).playOn(gameCardRecycler);
-        gameCardRecycler.setVisibility(View.VISIBLE);
+        //gameCardRecycler.setVisibility(View.VISIBLE);
+        YoYo.with(Techniques.SlideInUp).duration(1000).playOn(cardContainer);
+        //YoYo.with(Techniques.FadeIn).duration(5000).playOn(imageView);
+        //YoYo.with(Techniques.BounceIn).duration(10000).playOn(gameCardRecycler);
+
 
     }
 
     public void ArrowDownClicked(View view) {
-        YoYo.with(Techniques.SlideOutDown).duration(10000).playOn(cardContainer);
+        YoYo.with(Techniques.SlideOutDown).duration(1000).playOn(cardContainer);
     }
 }
