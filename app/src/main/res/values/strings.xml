@@ -6,4 +6,11 @@
     <string name="map">Map</string>
     <string name="list">List</string>
     <string name="create_a_game">Create Game</string>
+
+    <!--Tags/Badge-->
+    <string name="tag_in">  in  </string>
+    <string name="tag_organizer">organizer</string>
+    <string name="tag_coed">co-ed</string>
+    <string name="tag_soon">soon</string>
+    <string name="tag_public">public</string>
 </resources>
