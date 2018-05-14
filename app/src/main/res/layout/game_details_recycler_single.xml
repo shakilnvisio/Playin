@@ -9,8 +9,8 @@
         android:id="@+id/gdProfileCon"
         android:layout_below="@id/gdPlayerCountCon"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="42dp"
-        android:layout_marginStart="42dp">
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp">
         <com.github.abdularis.civ.CircleImageView
             android:layout_width="@dimen/circleImage_Height_Width"
             android:layout_height="@dimen/circleImage_Height_Width"
@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:text="Shakil Ahmed"
             android:id="@+id/playerName"
-            android:textSize="14sp"
+            android:textSize="15sp"
             android:layout_marginLeft="10dp"
             android:fontFamily="@font/open_sans_bold"
             android:textColor="@color/white"
@@ -36,7 +36,7 @@
             android:id="@+id/playerLevelAndCity"
             android:textColor="@color/general_text_secondary"
             android:fontFamily="@font/open_sans_semibold"
-            android:textSize="12sp"
+            android:textSize="9sp"
             android:layout_toRightOf="@id/playerImage"
             android:layout_toEndOf="@id/playerImage"
             android:layout_marginLeft="10dp"
@@ -56,4 +56,7 @@
         </RelativeLayout>
 
     </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="5dp" />
 </LinearLayout>
