@@ -7,22 +7,77 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-
+    
     <!-- Toolbar -->
     <style name="Toolbar_Custom">
         <item name="android:layout_height">@dimen/toolbar_height</item>
         <item name="android:layout_width">match_parent</item>'
         <item name="android:background">@color/colorPrimary</item>
     </style>
+    <!-- Toolbar navigation button Style-->
+    <style name="Toolbar_Navigation_RelativeLayout_Property">
+        <item name="android:layout_width">@dimen/toolbar_wrapped_navigation_icon_in_a_relativelayout_width</item>
+        <item name="android:layout_height">@dimen/toolbar_wrapped_navigation_icon_in_a_relativelayout_height</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <!-- Toolbar Icon Style-->
+    <style name="Toolbar_Icon_Properties">
+        <item name="android:layout_width">@dimen/icon_as_button_size</item>
+        <item name="android:layout_height">@dimen/icon_as_button_size</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <!-- General Textview as a Button Green-->
+    <style name="Textview_As_A_Button_General_Green">
+        <item name="android:layout_height">@dimen/textview_as_a_button_general_green_height</item>
+        <item name="android:layout_width">@dimen/textview_as_a_button_general_green_width</item>'
+        <item name="android:background">@drawable/create_game_button</item>
+        <item name="android:fontFamily">@font/open_sans_semibold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/primary_textview_size</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginBottom">@dimen/textview_as_a_button_general_green_margin_bottom</item>
+        
+    </style>
 
     <!-- Lobby Map-->
-    <style name="lobby_toolbar_button">
+    <style name="Toolbar_Tab_Button_Style_Regular">
         <item name="android:layout_height">@dimen/lobby_map_toolbar_button_height</item>
         <item name="android:layout_width">@dimen/lobby_map_toolbar_button_width</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:fontFamily">@font/open_sans_regular</item>
         <item name="android:gravity">center</item>
-
+        <item name="android:textSize">@dimen/primary_textview_size</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+    <!-- Lobby Details Player Number-->
+    <style name="game_details_toolbar_button">
+        <item name="android:layout_height">@dimen/lobby_map_toolbar_button_height</item>
+        <item name="android:layout_width">@dimen/lobby_map_toolbar_button_width</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/open_sans_bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+    <!-- Game Details Player Info secondary Textview Style-->
+    <style name="game_details_player_info_secondary_textView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:fontFamily">@font/open_sans_regular</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/general_text_secondary</item>
     </style>
     <!-- BADGE-->
     <style name="Badge_Style">
@@ -45,4 +100,51 @@
         <item name="android:paddingRight">8dp</item>
     </style>
 
+    <!-- RecyclerView-->
+    <style name="RecyclerView_Style">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginTop">@dimen/recyclerview_marginTop</item>
+        <item name="android:layout_marginBottom">@dimen/recyclerview_marginBottom</item>
+    </style>
+
+    <!-- Circle Button Style-->
+    <style name="CircleButtonStyle">
+        <item name="android:layout_width">@dimen/circle_button_size</item>
+        <item name="android:layout_height">@dimen/circle_button_size</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <!-- Cardview As a Single Card-->
+    <style name="CardView_Single_GameCard_Style">
+        <item name="android:layout_height">@dimen/cardview_game_card_height</item>
+        <item name="android:layout_width">@dimen/cardview_game_card_width</item>
+        <item name="android:layout_marginTop">@dimen/cardview_game_card_marginTop</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+
+    <!--Textview-->
+    <style name="TextView_Primary_Regular_Black">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:fontFamily">@font/open_sans_regular</item>
+    <item name="android:textSize">@dimen/primary_textview_size</item>
+    <item name="android:textColor">@color/general_text_permary_black</item>
+</style>
+    <style name="TextView_Primary_Bold_Black">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/open_sans_bold</item>
+        <item name="android:textSize">@dimen/primary_textview_size</item>
+        <item name="android:textColor">@color/general_text_permary_black</item>
+    </style>
+    <style name="TextView_Primary_Bold_Different_Color">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/open_sans_bold</item>
+        <item name="android:textSize">@dimen/primary_textview_size</item>
+    </style>
 </resources>

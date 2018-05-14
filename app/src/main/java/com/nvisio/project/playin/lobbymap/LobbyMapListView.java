@@ -20,11 +20,10 @@ import com.nvisio.project.playin.demo.GameCardDEMO;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class LobbyMapListView extends AppCompatActivity {
+public class LobbyMapListView extends AppCompatActivity implements GameCardAdapter.GameCardSelected {
 
     @BindView(R.id.gameCardList)RecyclerView gameRecycler;
     private GameCardAdapter adapter;
-    private GameCardAdapter.GameCardSelected gameCardSelected;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,12 +36,7 @@ public class LobbyMapListView extends AppCompatActivity {
         setContentView(R.layout.lobby_map_listview_activity);
         ButterKnife.bind(this);
         recyclerviewInit();
-        gameCardSelected=new GameCardAdapter.GameCardSelected() {
-            @Override
-            public void GameCardClicked(int p) {
-                Toast.makeText(LobbyMapListView.this, "position: "+p, Toast.LENGTH_SHORT).show();
-            }
-        };
+
     }
     private void recyclerviewInit(){
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
@@ -59,7 +53,7 @@ public class LobbyMapListView extends AppCompatActivity {
             Log.d("ss>>","now: "+demo.getDataModels().size());
             adapter=new GameCardAdapter(this,demo.getDataModels());
             gameRecycler.setAdapter(adapter);
-            adapter.setOnClicked(gameCardSelected);
+            adapter.setOnClicked(this::GameCardClicked);
             //demoData(false);
         }
         else{
@@ -68,6 +62,7 @@ public class LobbyMapListView extends AppCompatActivity {
             Log.d("ss>>",""+demo.getDataModels().size());
             adapter=new GameCardAdapter(this,demo.getDataModels());
             gameRecycler.setAdapter(adapter);
+            adapter.setOnClicked(this::GameCardClicked);
 
         }
     }
@@ -88,5 +83,10 @@ public class LobbyMapListView extends AppCompatActivity {
     }
 
     public void CreateGameClicked(View view) {
+    }
+
+    @Override
+    public void GameCardClicked(int p) {
+
     }
 }

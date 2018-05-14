@@ -2,6 +2,12 @@
     <!-- -->
     <string name="app_name">Playin</string>
     <string name="api_key_map">AIzaSyCQgOxPWXRzwka4wkKTQOUjLWADlXRA8dI</string>
+
+    <!--Textview as a button green general-->
+    <string name="invite_player">Invite Player</string>
+    <string name="start_game">Start Game</string>
+    <string name="end_game">End Game</string>
+    <string name="join_game">Join Game</string>
     <!--Lobby Map-->
     <string name="map">Map</string>
     <string name="list">List</string>
@@ -13,4 +19,6 @@
     <string name="tag_coed">co-ed</string>
     <string name="tag_soon">soon</string>
     <string name="tag_public">public</string>
+
+
 </resources>

@@ -41,12 +41,11 @@ import permissions.dispatcher.NeedsPermission;
 import permissions.dispatcher.RuntimePermissions;
 
 @RuntimePermissions
-public class LobbyMapActivity extends AppCompatActivity {
+public class LobbyMapActivity extends AppCompatActivity implements GameCardAdapter.GameCardSelected {
     private SupportMapFragment mapFragment;
     private GoogleMap mMap;
     private OnMapReadyCallback onMapReadyCallback;
     private GameCardAdapter adapter;
-    private GameCardAdapter.GameCardSelected gameCardSelected;
     private Boolean isOpened=false;
     @BindView(R.id.gameCardRecycler)RecyclerView gameCardRecycler;
     @BindView(R.id.blur)RelativeLayout blurry;
@@ -72,13 +71,6 @@ public class LobbyMapActivity extends AppCompatActivity {
         onMapReadyCallback=this::MapReady;
         MapInitialise();
         LobbyMapActivityPermissionsDispatcher.CallMapWithPermissionCheck(LobbyMapActivity.this);
-        gameCardSelected=new GameCardAdapter.GameCardSelected() {
-            @Override
-            public void GameCardClicked(int p) {
-                Toast.makeText(LobbyMapActivity.this, "position: "+p, Toast.LENGTH_SHORT).show();
-            }
-        };
-        Log.d("log>>","start");
     }
 
     private void recyclerviewInit(){
@@ -96,7 +88,6 @@ public class LobbyMapActivity extends AppCompatActivity {
             Log.d("ss>>","now: "+demo.getDataModels().size());
             adapter=new GameCardAdapter(this,demo.getDataModels());
             gameCardRecycler.setAdapter(adapter);
-            adapter.setOnClicked(gameCardSelected);
             //demoData(false);
         }
         else{
@@ -105,7 +96,7 @@ public class LobbyMapActivity extends AppCompatActivity {
             Log.d("ss>>",""+demo.getDataModels().size());
             adapter=new GameCardAdapter(this,demo.getDataModels());
             gameCardRecycler.setAdapter(adapter);
-
+            adapter.setOnClicked(this::GameCardClicked);
         }
     }
 
@@ -175,5 +166,10 @@ public class LobbyMapActivity extends AppCompatActivity {
 
     public void ArrowDownClicked(View view) {
         YoYo.with(Techniques.SlideOutDown).duration(1000).playOn(cardContainer);
+    }
+
+    @Override
+    public void GameCardClicked(int p) {
+
     }
 }

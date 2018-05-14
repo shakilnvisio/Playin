@@ -8,8 +8,8 @@
         android:layout_marginTop="10dp"
         android:id="@+id/gameDetailsFirstRela">
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:src="@drawable/ic_cus_basketball_242x"
             android:layout_centerInParent="true"
             android:id="@+id/gameDetailsGameIcon"/>
@@ -30,7 +30,7 @@
         android:text="Today, 14:20 pm / 30 mins"
         android:layout_below="@id/gameDetailsFirstRela"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="2dp"
         android:fontFamily="@font/open_sans_bold"
         android:textColor="@color/white"
         android:textSize="18sp"
@@ -116,7 +116,7 @@
                     android:text="3/6"
                     android:fontFamily="@font/open_sans_bold"
                     android:textColor="@color/white"
-                    android:textSize="22sp"
+                    android:textSize="18sp"
                     android:id="@+id/gdTextPlayerNumber"
                     android:layout_centerHorizontal="true"/>
                 <TextView
@@ -140,7 +140,10 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/normal_button_with_gray_color"
-                    android:gravity="center"/>
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:focusable="true"
+                    android:onClick="ViewClicked"/>
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="0dp"
@@ -152,7 +155,7 @@
                     android:text="3"
                     android:fontFamily="@font/open_sans_bold"
                     android:textColor="@color/game_card_yellow"
-                    android:textSize="22sp"
+                    android:textSize="18sp"
                     android:id="@+id/gdTextPlayerNeeded"
                     android:layout_centerHorizontal="true"/>
                 <TextView
@@ -197,7 +200,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Shakil Ahmed"
-            android:textSize="14sp"
+            android:textSize="15sp"
             android:layout_toRightOf="@id/gdOrganizerPic"
             android:layout_marginLeft="10dp"
             android:fontFamily="@font/open_sans_bold"
@@ -248,7 +251,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Local Play Ground"
-            android:textSize="14sp"
+            android:textSize="15sp"
             android:layout_marginLeft="5dp"
             android:fontFamily="@font/open_sans_bold"
             android:textColor="@color/white"
@@ -288,15 +291,6 @@
             android:layout_marginTop="5dp"/>
 
     <TextView
-        android:layout_width="250dp"
-        android:layout_height="40dp"
-        android:text="Start Game"
-        android:background="@drawable/create_game_button"
-        android:fontFamily="@font/open_sans_semibold"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        android:gravity="center"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp"/>
+        style="@style/Textview_As_A_Button_General_Green"
+        android:text="@string/start_game" />
 </RelativeLayout>

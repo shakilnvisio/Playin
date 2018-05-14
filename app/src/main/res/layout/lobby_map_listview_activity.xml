@@ -17,7 +17,7 @@
                 android:layout_height="match_parent"
                 android:layout_centerInParent="true">
                 <TextView
-                    style="@style/lobby_toolbar_button"
+                    style="@style/Toolbar_Tab_Button_Style"
                     android:text="@string/map"
                     android:background="@drawable/unselected_button_right"
                     android:id="@+id/mapButton"
@@ -26,7 +26,7 @@
                     android:focusable="true"
                     android:onClick="MapClicked"/>
                 <TextView
-                    style="@style/lobby_toolbar_button"
+                    style="@style/Toolbar_Tab_Button_Style"
                     android:text="@string/list"
                     android:background="@drawable/selected_button_left"
                     android:id="@+id/listButton"

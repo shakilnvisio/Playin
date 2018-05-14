@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         tools:replace="android:allowBackup"
         android:theme="@style/AppTheme">
-        <activity android:name=".lobbymap.LobbyMapActivity"
+        <activity android:name=".gamedetails.GameDetailsAcivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,6 +24,12 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".lobbymap.LobbyMapListView"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+
+        <activity android:name=".lobbymap.LobbyMapActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+
+        <activity android:name=".gamedetails.GameDetailsPlayerNumberActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"/>
 
         <meta-data

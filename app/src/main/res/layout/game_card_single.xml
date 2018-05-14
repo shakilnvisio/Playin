@@ -5,13 +5,10 @@
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <android.support.v7.widget.CardView
-        android:layout_width="300dp"
-        android:layout_height="@dimen/lobby_map_game_card_height"
+        style="@style/CardView_Single_GameCard_Style"
         android:id="@+id/gameCardContainer"
-        android:layout_margin="10dp"
-        android:layout_gravity="center_horizontal"
         app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="5dp">
+        app:cardCornerRadius="@dimen/cardview_game_card_radius">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -27,41 +24,39 @@
                 android:orientation="vertical"
                 android:weightSum="3"
                 android:layout_marginLeft="3dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimen/cardview_game_card_def_margin"
                 android:layout_toEndOf="@id/leftBar"
                 android:layout_marginStart="3dp">
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginStart="10dp">
+                    android:layout_marginLeft="@dimen/cardview_game_card_def_margin"
+                    android:layout_marginStart="@dimen/cardview_game_card_def_margin">
                     <com.github.abdularis.civ.CircleImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_width="@dimen/circleImage_Height_Width"
+                        android:layout_height="@dimen/circleImage_Height_Width"
                         android:src="@drawable/pic"
                         android:id="@+id/managerImage"
                         android:layout_centerVertical="true"
                         />
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        style="@style/TextView_Primary_Regular_Black"
                         android:text="Shakil Ahmed"
                         android:id="@+id/managerName"
                         android:layout_toEndOf="@id/managerImage"
                         android:layout_toRightOf="@id/managerImage"
-                        android:layout_marginLeft="10dp"
-                        android:fontFamily="@font/open_sans_regular"
                         android:layout_centerVertical="true"
-                        android:textColor="@color/game_card_text_normal"
-                        android:layout_marginStart="10dp" />
+                        android:layout_marginLeft="@dimen/cardview_game_card_def_margin"
+                        android:layout_marginStart="@dimen/cardview_game_card_def_margin" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true">
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true">
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -74,7 +69,8 @@
                             android:layout_marginLeft="4dp"
                             android:id="@+id/slot_two"
                             style="@style/Badge_Style"
-                            android:layout_gravity="center_vertical"/>
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="4dp" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -82,33 +78,32 @@
                             android:layout_marginRight="23dp"
                             android:id="@+id/slot_one"
                             style="@style/Badge_Style"
-                            android:layout_gravity="center_vertical"/>
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginEnd="23dp" />
                     </LinearLayout>
                 </RelativeLayout>
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="@dimen/cardview_game_card_def_margin"
                     android:layout_marginTop="5dp"
-                    android:layout_marginStart="10dp">
+                    android:layout_marginStart="@dimen/cardview_game_card_def_margin">
                     <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_width="@dimen/icon_as_button_size"
+                        android:layout_height="@dimen/icon_as_button_size"
                         android:src="@drawable/ic_cus_basketball_242x"
                         android:layout_centerVertical="true"
                         android:id="@+id/gameIcon"/>
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        style="@style/TextView_Primary_Bold_Black"
                         android:layout_toEndOf="@id/gameIcon"
                         android:layout_toRightOf="@id/gameIcon"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="@dimen/cardview_game_card_def_margin"
+                        android:layout_marginStart="@dimen/cardview_game_card_def_margin"
                         android:text="2/6"
-                        android:fontFamily="@font/opensans_bold"
                         android:layout_centerVertical="true"
-                        android:textColor="@color/game_card_text_bold"
                         android:id="@+id/playerCount"/>
                     <ImageView
                         android:layout_width="20dp"
@@ -119,42 +114,37 @@
                         android:layout_toEndOf="@id/playerCount"
                         android:baselineAlignBottom="true"
                         android:layout_toRightOf="@id/playerCount"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginStart="15dp" />
+                        android:layout_marginLeft="@dimen/cardview_game_card_def_margin"
+                        android:layout_marginStart="@dimen/cardview_game_card_def_margin" />
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        style="@style/TextView_Primary_Bold_Different_Color"
                         android:layout_toEndOf="@id/arrowRight"
                         android:layout_toRightOf="@id/arrowRight"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="@dimen/cardview_game_card_def_margin"
+                        android:layout_marginStart="@dimen/cardview_game_card_def_margin"
                         android:text="4 needed"
-                        android:fontFamily="@font/opensans_bold"
                         android:layout_centerVertical="true"
                         android:textColor="@color/game_card_yellow"
                         android:id="@+id/playerNeeded"
                         />
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
+                        style="@style/TextView_Primary_Bold_Black"
                         android:layout_centerVertical="true"
-                        android:layout_marginRight="23dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
                         android:text="17:30 pm"
                         android:id="@+id/GameTime"
-                        android:fontFamily="@font/opensans_bold"
-                        android:textColor="@color/game_card_text_bold"/>
+                        android:layout_marginRight="23dp"
+                        android:layout_marginEnd="23dp"
+                         />
                 </RelativeLayout>
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1">
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        style="@style/TextView_Primary_Regular_Black"
                         android:text="1h game @ Abahani Field"
-                        android:fontFamily="@font/open_sans_regular"
-                        android:textColor="@color/game_card_text_normal"
                         android:layout_marginTop="5dp"
                         android:layout_marginLeft="51dp"
                         android:id="@+id/venue"
