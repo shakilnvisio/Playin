@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <RelativeLayout
+        android:id="@+id/co_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height">
+
+        <TextView
+            style="@style/TextView_Primary_Bold_Different_Color"
+            android:layout_centerInParent="true"
+            android:text="@string/change_ownership"
+            android:textColor="@color/white"
+            android:textSize="@dimen/headline_textview_size" />
+
+        <RelativeLayout
+            style="@style/Toolbar_Navigation_RelativeLayout_Property"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="@dimen/toolbar_margin"
+            android:layout_marginRight="@dimen/toolbar_margin"
+            android:onClick="CloseClicked">
+
+            <ImageView
+                style="@style/Toolbar_Icon_Properties"
+                android:onClick="CloseClicked"
+                android:src="@drawable/ic_close_white_24dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <TextView
+        style="@style/TextView_Primary_Regular_Black"
+        android:layout_below="@id/co_toolbar"
+        android:text="@string/select_a_player"
+        android:layout_margin="5dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/secondary_textview_size"
+        android:gravity="center"
+        android:id="@+id/coSelectPlayerTextInstruction"/>
+
+    <android.support.v7.widget.RecyclerView
+        style="@style/RecyclerView_Style"
+        android:id="@+id/coRecyclerview"
+        android:layout_marginBottom="35dp"
+        android:layout_below="@id/coSelectPlayerTextInstruction"
+        android:layout_above="@id/changeOwnershipButton">
+    </android.support.v7.widget.RecyclerView>
+
+    <TextView
+        style="@style/Textview_As_A_Button_General_Green"
+        android:text="@string/change_ownership"
+        android:id="@+id/changeOwnershipButton"
+        android:visibility="invisible"
+        android:onClick="ChangeOwnership"/>
+
+</RelativeLayout>

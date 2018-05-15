@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -14,18 +15,16 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.github.abdularis.civ.CircleImageView;
 import com.nvisio.project.playin.R;
-import com.nvisio.project.playin.models.GameDetailsPlayerInfo;
+import com.nvisio.project.playin.models.PlayerInfo;
 
 import java.util.List;
-import java.util.PrimitiveIterator;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class GameDetailsPlayerInfoAdapter extends RecyclerView.Adapter<GameDetailsPlayerInfoAdapter.RecyclerViewHolders> {
     private final Context context;
-    private List<GameDetailsPlayerInfo> Items;
+    private List<PlayerInfo> Items;
     private PlayerSelected playerSelected;
 
     public interface PlayerSelected {
@@ -37,12 +36,12 @@ public class GameDetailsPlayerInfoAdapter extends RecyclerView.Adapter<GameDetai
 
     }
 
-    public GameDetailsPlayerInfoAdapter(Context context, List<GameDetailsPlayerInfo> items) {
+    public GameDetailsPlayerInfoAdapter(Context context, List<PlayerInfo> items) {
         this.Items = items;
         this.context = context;
     }
 
-    public GameDetailsPlayerInfo getItem(int position) {
+    public PlayerInfo getItem(int position) {
         return Items.get(position);
     }
 
@@ -56,7 +55,7 @@ public class GameDetailsPlayerInfoAdapter extends RecyclerView.Adapter<GameDetai
 
     @Override
     public void onBindViewHolder(RecyclerViewHolders holder, int position) {
-        GameDetailsPlayerInfo itemDeals = Items.get(position);
+        PlayerInfo itemDeals = Items.get(position);
         //Name
         if (itemDeals.isOrganizer()){
             holder.playerName.setText(itemDeals.getPlayerName()+" (Organizer)");
@@ -85,16 +84,20 @@ public class GameDetailsPlayerInfoAdapter extends RecyclerView.Adapter<GameDetai
         @BindView(R.id.playerLevelAndCity)TextView playerLevelAndCity;
         @BindView(R.id.playerImage)CircleImageView playerImage;
         @BindView(R.id.playerProfile)RelativeLayout playerProfile;
+        @BindView(R.id.arrowRightPlayerInfo)ImageView arrowRight;
         public RecyclerViewHolders(View itemView) {
             super(itemView);
             ButterKnife.bind(this,itemView);
             playerProfile.setOnClickListener(this);
+            arrowRight.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
             Log.d("pos>>",""+getAdapterPosition());
             playerSelected.PlayerSelectedInterface(getAdapterPosition());
+            playerName.setText("Jubayer Ahmed");
+
         }
     }
 }

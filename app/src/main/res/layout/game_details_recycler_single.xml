@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:text="Shakil Ahmed"
             android:id="@+id/playerName"
-            android:textSize="15sp"
+            android:textSize="@dimen/primary_textview_size"
             android:layout_marginLeft="10dp"
             android:fontFamily="@font/open_sans_bold"
             android:textColor="@color/white"
@@ -36,7 +36,7 @@
             android:id="@+id/playerLevelAndCity"
             android:textColor="@color/general_text_secondary"
             android:fontFamily="@font/open_sans_semibold"
-            android:textSize="9sp"
+            android:textSize="@dimen/lowest_textview_size"
             android:layout_toRightOf="@id/playerImage"
             android:layout_toEndOf="@id/playerImage"
             android:layout_marginLeft="10dp"
@@ -52,6 +52,7 @@
             <ImageView
                 style="@style/Toolbar_Icon_Properties"
                 android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+                android:id="@+id/arrowRightPlayerInfo"
                 />
         </RelativeLayout>
 

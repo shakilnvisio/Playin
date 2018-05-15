@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/TextView_Primary_Regular_Black"
+            android:text="Shakil Ahmed"
+            android:textSize="@dimen/secondary_textview_size"
+            android:id="@+id/invitePlayerName"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:clickable="false"
+            android:focusable="false"
+            />
+
+        <TextView
+            style="@style/TextView_Primary_Bold_Black"
+            android:text="@string/view_profile"
+            android:id="@+id/dialogViewProfile"
+            android:layout_marginTop="@dimen/dialog_margin_20"
+            android:layout_marginLeft="@dimen/dialog_margin_20"
+            android:layout_marginStart="@dimen/dialog_margin_20"
+            android:clickable="true"
+            android:focusable="true"
+            />
+        <TextView
+            style="@style/TextView_Primary_Bold_Black"
+            android:text="@string/resend_invitation"
+            android:id="@+id/dialog_resend"
+            android:layout_marginTop="@dimen/dialog_margin_20"
+            android:layout_marginLeft="@dimen/dialog_margin_20"
+            android:layout_marginStart="@dimen/dialog_margin_20"
+            android:clickable="true"
+            android:focusable="true" />
+        <TextView
+            style="@style/TextView_Primary_Bold_Black"
+            android:text="@string/cancel_invitation"
+            android:id="@+id/dialogCancel"
+            android:textColor="@color/badge_red"
+            android:layout_marginTop="@dimen/dialog_margin_20"
+            android:layout_marginLeft="@dimen/dialog_margin_20"
+            android:layout_marginStart="@dimen/dialog_margin_20"
+            android:clickable="true"
+            android:focusable="true" />
+        <TextView
+            style="@style/TextView_Primary_Bold_Different_Color"
+            android:text="@string/cancel"
+            android:id="@+id/cancelInvitePopUp"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="@dimen/dialog_margin_20"
+            android:layout_marginStart="@dimen/dialog_margin_20"
+            android:layout_marginBottom="@dimen/dialog_margin_20"
+            android:clickable="true"
+            android:focusable="true" />
+
+    </LinearLayout>
+
+</LinearLayout>

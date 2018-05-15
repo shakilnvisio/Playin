@@ -2,6 +2,7 @@
     <!-- -->
     <string name="app_name">Playin</string>
     <string name="api_key_map">AIzaSyCQgOxPWXRzwka4wkKTQOUjLWADlXRA8dI</string>
+    <string name="cancel">Cancel</string>
 
     <!--Textview as a button green general-->
     <string name="invite_player">Invite Player</string>
@@ -12,6 +13,12 @@
     <string name="map">Map</string>
     <string name="list">List</string>
     <string name="create_a_game">Create Game</string>
+    <!--Dialog-->
+    <string name="edit_game_details">Edit Game Details</string>
+    <string name="change_ownership">Change Ownership</string>
+    <string name="view_profile">View Profile</string>
+    <string name="resend_invitation">Re-send Invitation</string>
+    <string name="cancel_invitation">Cancel Invitation</string>
 
     <!--Tags/Badge-->
     <string name="tag_in">  in  </string>
@@ -20,5 +27,7 @@
     <string name="tag_soon">soon</string>
     <string name="tag_public">public</string>
 
+    <!--Demo-->
+    <string name="select_a_player">Select a player below to transfer the ownership of the game to. After that you will not be able to manage the game details and players.</string>
 
 </resources>

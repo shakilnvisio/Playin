@@ -3,10 +3,12 @@
     <!--General-->
     <dimen name="blur_relative_height">250dp</dimen>
     <dimen name="margin_from_image">10dp</dimen>
+    <dimen name="icon_size_40">40dp</dimen>
     <!--TextView size-->
     <dimen name="headline_textview_size">18sp</dimen>
     <dimen name="primary_textview_size">15sp</dimen>
     <dimen name="secondary_textview_size">12sp</dimen>
+    <dimen name="lowest_textview_size">9sp</dimen>
 
     <!--Drawable-->
     <dimen name="circle_button_size">40dp</dimen>
@@ -42,4 +44,6 @@
     <dimen name="cardview_game_card_radius">5dp</dimen>
     <dimen name="cardview_game_card_def_margin">10dp</dimen>
 
+    <!--Dialog-->
+    <dimen name="dialog_margin_20">20dp</dimen>
 </resources>

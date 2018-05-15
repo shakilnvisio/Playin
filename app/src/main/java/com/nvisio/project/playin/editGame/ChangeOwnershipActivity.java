@@ -1,6 +1,5 @@
-package com.nvisio.project.playin.gamedetails;
+package com.nvisio.project.playin.editGame;
 
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,30 +7,27 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.nvisio.project.playin.R;
-import com.nvisio.project.playin.adapter.GameDetailsPlayerInfoAdapter;
+import com.nvisio.project.playin.adapter.ChangeOwnershipAdapter;
 import com.nvisio.project.playin.demo.GameDetailsPlayerInfoDEMO;
 import com.nvisio.project.playin.models.PlayerInfo;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class GameDetailsPlayerNumberActivity extends AppCompatActivity implements GameDetailsPlayerInfoAdapter.PlayerSelected {
+public class ChangeOwnershipActivity extends AppCompatActivity implements ChangeOwnershipAdapter.SetChangeOwnerSelected {
 
-    @BindView(R.id.playerInfoRecycler)RecyclerView playerInfoRecycler;
-    private List<PlayerInfo>ListData;
-    private GameDetailsPlayerInfoAdapter adapter;
+    @BindView(R.id.coRecyclerview)RecyclerView changeOwnerRecycler;
+    @BindView(R.id.changeOwnershipButton)TextView ownershipButton;
+    private ChangeOwnershipAdapter adapter;
 
-    private int demoFlag=0;
-    private int prevPos=0;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +37,7 @@ public class GameDetailsPlayerNumberActivity extends AppCompatActivity implement
                     window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
                     window.setStatusBarColor(ContextCompat.getColor(this,R.color.colorPrimary) );
                 }
-        setContentView(R.layout.game_details_player_number);
+        setContentView(R.layout.change_ownership_layout);
         ButterKnife.bind(this);
         RecyclerViewInit();
     }
@@ -49,35 +45,30 @@ public class GameDetailsPlayerNumberActivity extends AppCompatActivity implement
     private void RecyclerViewInit(){
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        playerInfoRecycler.setLayoutManager(linearLayoutManager);
-        ListData=new ArrayList<>();
+        changeOwnerRecycler.setLayoutManager(linearLayoutManager);
         demoData();
     }
-
     private void demoData(){
         GameDetailsPlayerInfoDEMO demo=new GameDetailsPlayerInfoDEMO();
         demo.GameDetailsPlayerInfoDemoINSERT();
-        List<PlayerInfo> data=demo.getDataModels();
-        for (int i = 0; i <data.size() ; i++) {
-            ListData.add(data.get(i));
-        }
-        adapter=new GameDetailsPlayerInfoAdapter(this,ListData);
-        playerInfoRecycler.setAdapter(adapter);
-        adapter.setOnClicked(this::PlayerSelectedInterface);
+        adapter=new ChangeOwnershipAdapter(this,demo.getDataModels());
+        changeOwnerRecycler.setAdapter(adapter);
+        adapter.setOnClicked(this);
 
     }
+    public void CloseClicked(View view) {
+    }
 
-    public void BackButtonClicked(View view) {
-        Intent intent =new Intent(GameDetailsPlayerNumberActivity.this,GameDetailsAcivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
-        overridePendingTransition(R.anim.left_to_right_enter,R.anim.left_to_right_exit);
+    public void ChangeOwnership(View view) {
     }
 
     @Override
-    public void PlayerSelectedInterface(int p) {
-
-
-
+    public void setOwnerChangeListerner(int p,boolean show) {
+      if (show){
+          ownershipButton.setVisibility(View.VISIBLE);
+      }
+      else{
+          ownershipButton.setVisibility(View.INVISIBLE);
+      }
     }
 }

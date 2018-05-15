@@ -8,21 +8,34 @@
         android:layout_marginTop="10dp"
         android:id="@+id/gameDetailsFirstRela">
         <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="@dimen/icon_size_40"
+            android:layout_height="@dimen/icon_size_40"
             android:src="@drawable/ic_cus_basketball_242x"
             android:layout_centerInParent="true"
             android:id="@+id/gameDetailsGameIcon"/>
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_close_white_24dp"
+
+        <RelativeLayout
+            style="@style/Toolbar_Navigation_RelativeLayout_Property"
+            android:layout_toLeftOf="@id/close"
+            android:layout_toStartOf="@id/close"
+            android:onClick="Edit">
+            <ImageView
+                style="@style/Toolbar_Icon_Properties"
+                android:src="@drawable/edit_white_24dp"
+                android:onClick="Edit"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            style="@style/Toolbar_Navigation_RelativeLayout_Property"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="30dp"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="30dp"
-            android:clickable="true"
-            android:focusable="true" />
+            android:id="@+id/close"
+            android:onClick="CloseClicked">
+            <ImageView
+                style="@style/Toolbar_Icon_Properties"
+                android:src="@drawable/ic_close_white_24dp"/>
+        </RelativeLayout>
+
     </RelativeLayout>
     <TextView
         android:layout_width="wrap_content"
@@ -282,7 +295,7 @@
         <TextView
             android:layout_width="300dp"
             android:layout_height="60dp"
-            android:text="We are gonna a cricket match between friends. You are welcome to join."
+            android:text="We are gonna play a cricket match between friends. You are welcome to join."
             android:fontFamily="@font/open_sans_regular"
             android:gravity="center"
             android:textColor="@color/general_text_secondary"

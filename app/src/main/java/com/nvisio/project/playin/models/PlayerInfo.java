@@ -1,11 +1,11 @@
 package com.nvisio.project.playin.models;
 
-public class GameDetailsPlayerInfo {
+public class PlayerInfo {
     private int id;
     private String playerId, imageURL, playerName, playerLevel, playerCity;
     private boolean isOrganizer;
 
-    public GameDetailsPlayerInfo() {
+    public PlayerInfo() {
     }
 
     public int getId() {
