@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         tools:replace="android:allowBackup"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.LoginStartActivity"
+        <activity android:name=".ui.login.LoginStartActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -56,8 +56,9 @@
             android:theme="@style/Theme.AppCompat.NoActionBar"/>
         <activity android:name=".editGame.ChangeOwnershipActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"/>
-        <activity android:name=".ui.LoginInputActivity"
+        <activity android:name=".ui.login.LoginInputActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:name=".ui.signup.CreateAccountMainActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

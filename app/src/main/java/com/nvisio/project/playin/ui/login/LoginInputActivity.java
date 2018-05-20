@@ -1,4 +1,4 @@
-package com.nvisio.project.playin.ui;
+package com.nvisio.project.playin.ui.login;
 
 import android.content.Intent;
 import android.os.Build;
