@@ -1,0 +1,58 @@
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/loginCredentialContainer"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="@string/login"
+        android:textSize="22sp"
+        android:fontFamily="@font/open_sans_semibold"
+        android:textColor="@color/white"
+        android:gravity="center_horizontal"
+        android:id="@+id/Lheadline"/>
+    <EditText
+        style="@style/LoginEdittext"
+        android:layout_below="@id/Lheadline"
+        android:layout_marginTop="15dp"
+        android:hint="@string/email"
+        android:id="@+id/emailInput"/>
+    <EditText
+        style="@style/LoginEdittext"
+        android:layout_below="@id/emailInput"
+        android:layout_marginTop="15dp"
+        android:hint="@string/password"
+        android:id="@+id/passwordInput"/>
+    <TextView
+        style="@style/LoginButtonStyle"
+        android:layout_below="@id/passwordInput"
+        android:text="@string/login"
+        android:id="@+id/loginSubmit"
+        android:onClick="Login"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/forgot_pass_question"
+        style="@style/Login_Activity_Secondary_Textview"
+        android:layout_below="@id/loginSubmit"
+        android:layout_marginTop="50dp"
+        android:id="@+id/forgotPassHeadline"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/reset_pass"
+        android:textSize="@dimen/primary_textview_size"
+        android:fontFamily="@font/open_sans_bold"
+        android:textColor="@color/button_color"
+        android:gravity="center_horizontal"
+        android:layout_below="@id/forgotPassHeadline"
+        android:layout_marginTop="10dp"
+        android:onClick="MakeResetLayoutVisible"
+        android:clickable="true"
+        android:focusable="true" />
+
+</RelativeLayout>

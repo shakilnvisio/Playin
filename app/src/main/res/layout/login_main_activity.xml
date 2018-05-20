@@ -140,7 +140,7 @@
                 style="@style/Login_Activity_Secondary_Textview"
                 android:layout_below="@id/loginWithEmail"
                 android:text="@string/do_not_have_an_account"
-                android:layout_marginTop="35dp"
+                android:layout_marginTop="55dp"
                 android:id="@+id/dont_have_account"
                 />
             <TextView

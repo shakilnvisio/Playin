@@ -159,4 +159,29 @@
         <item name="android:textColor">@color/general_text_secondary</item>
         <item name="android:textSize">@dimen/secondary_textview_size</item>
     </style>
+
+    <style name="LoginEdittext">
+        <item name="android:layout_width">@dimen/login_edittext_width</item>
+        <item name="android:layout_height">@dimen/login_edittext_height</item>
+        <item name="android:background">@drawable/edittext_background</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:textSize">@dimen/secondary_textview_size</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:fontFamily">@font/open_sans_regular</item>
+        <item name="android:paddingLeft">@dimen/login_edittext_padding_start</item>
+        <item name="android:textColorHint">@color/colorPrimary</item>
+    </style>
+    <style name="LoginButtonStyle">
+        <item name="android:layout_width">@dimen/login_edittext_width</item>
+        <item name="android:layout_height">@dimen/login_edittext_height</item>
+        <item name="android:background">@drawable/create_game_button</item>
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/primary_textview_size</item>
+        <item name="android:fontFamily">@font/open_sans_bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
 </resources>

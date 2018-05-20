@@ -51,4 +51,7 @@
     <dimen name="login_with_button_height">40dp</dimen>
     <dimen name="login_with_button_width">300dp</dimen>
     <dimen name="login_with_button_left_icon_size">25dp</dimen>
+    <dimen name="login_edittext_height">40dp</dimen>
+    <dimen name="login_edittext_width">300dp</dimen>
+    <dimen name="login_edittext_padding_start">15dp</dimen>
 </resources>
