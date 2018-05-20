@@ -150,4 +150,13 @@
         <item name="android:fontFamily">@font/open_sans_bold</item>
         <item name="android:textSize">@dimen/primary_textview_size</item>
     </style>
+
+
+    <!--Login Page Textview-->
+    <style name="Login_Activity_Secondary_Textview">
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily">@font/open_sans_bold</item>
+        <item name="android:textColor">@color/general_text_secondary</item>
+        <item name="android:textSize">@dimen/secondary_textview_size</item>
+    </style>
 </resources>

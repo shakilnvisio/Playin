@@ -46,4 +46,9 @@
 
     <!--Dialog-->
     <dimen name="dialog_margin_20">20dp</dimen>
+
+    <!-- Login button-->
+    <dimen name="login_with_button_height">40dp</dimen>
+    <dimen name="login_with_button_width">300dp</dimen>
+    <dimen name="login_with_button_left_icon_size">25dp</dimen>
 </resources>

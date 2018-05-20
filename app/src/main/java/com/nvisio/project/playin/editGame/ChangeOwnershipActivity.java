@@ -1,5 +1,8 @@
 package com.nvisio.project.playin.editGame;
 
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,6 +10,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -18,6 +22,9 @@ import com.nvisio.project.playin.R;
 import com.nvisio.project.playin.adapter.ChangeOwnershipAdapter;
 import com.nvisio.project.playin.demo.GameDetailsPlayerInfoDEMO;
 import com.nvisio.project.playin.models.PlayerInfo;
+
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -40,8 +47,30 @@ public class ChangeOwnershipActivity extends AppCompatActivity implements Change
         setContentView(R.layout.change_ownership_layout);
         ButterKnife.bind(this);
         RecyclerViewInit();
+        keyHashes();
     }
 
+    private void keyHashes(){
+        Log.d("KeyHash>>","start");
+        try {
+            Log.d("KeyHash>>","inside try");
+            PackageInfo info = getPackageManager().getPackageInfo(
+                    "com.nvisio.project.playin",
+                    PackageManager.GET_SIGNATURES);
+            Log.d("KeyHash>>","before for");
+            for (Signature signature : info.signatures) {
+                Log.d("KeyHash>>","inside for");
+                MessageDigest md = MessageDigest.getInstance("SHA");
+                md.update(signature.toByteArray());
+                Log.d("KeyHash>>", Base64.encodeToString(md.digest(), Base64.DEFAULT));
+            }
+        } catch (PackageManager.NameNotFoundException e) {
+            Log.d("KeyHash>>","error first: "+e);
+
+        } catch (NoSuchAlgorithmException e) {
+            Log.d("KeyHash>>","error 2nd: "+e);
+        }
+    }
     private void RecyclerViewInit(){
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);

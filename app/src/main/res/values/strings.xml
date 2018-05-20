@@ -2,7 +2,17 @@
     <!-- -->
     <string name="app_name">Playin</string>
     <string name="api_key_map">AIzaSyCQgOxPWXRzwka4wkKTQOUjLWADlXRA8dI</string>
+    <string name="facebook_app_id">387133905136380</string>
+    <string name="fb_login_protocol_scheme">fb387133905136380</string>
+
     <string name="cancel">Cancel</string>
+    <string name="login">Login</string>
+    <string name="enter_facebook">Enter with Facebook</string>
+    <string name="enter_email">Enter with Email</string>
+    <string name="do_not_have_an_account">Do not have an account?</string>
+    <string name="create_account">Create Account</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="terms">Terms of Use</string>
 
     <!--Textview as a button green general-->
     <string name="invite_player">Invite Player</string>

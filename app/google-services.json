@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "309161849262",
+    "firebase_url": "https://playin-6d050.firebaseio.com",
+    "project_id": "playin-6d050",
+    "storage_bucket": "playin-6d050.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:309161849262:android:0565e1857a2a2300",
+        "android_client_info": {
+          "package_name": "com.nvisio.project.playin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "309161849262-t6s6h757llg1vno5ekpaj8fju2o2fat5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nvisio.project.playin",
+            "certificate_hash": "2c1ae1de8730f641141658772b8a2cd4873fc66b"
+          }
+        },
+        {
+          "client_id": "309161849262-ficu5f5i1u41359cio1gilvria0cp5uf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChKKfSzdGj-MPbSHML15Lc5cV6-2Ew1aE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "309161849262-ficu5f5i1u41359cio1gilvria0cp5uf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

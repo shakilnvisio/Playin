@@ -10,6 +10,7 @@
     <color name="general_error_color">#DB4F5D</color>
     <color name="general_text_secondary">#9BA6B9</color>
     <color name="general_text_permary_black">#262D39</color>
+    <color name="facebook_blue">#4267B2</color>
 
     <!--General Button-->
     <color name="button_color">#29CCB1</color>
