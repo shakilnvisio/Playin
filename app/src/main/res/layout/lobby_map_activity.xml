@@ -13,13 +13,13 @@
             <TextView
                 style="@style/Toolbar_Tab_Button_Style_Regular"
                 android:text="@string/map"
-                android:background="@drawable/selected_button_right"
+                android:background="@drawable/selected_button_right_have_straight_line"
                 android:id="@+id/mapButton"
                 android:onClick="MapClicked"/>
             <TextView
                 style="@style/Toolbar_Tab_Button_Style_Regular"
                 android:text="@string/list"
-                android:background="@drawable/unselected_button_left"
+                android:background="@drawable/unselected_button_left_have_straight_line"
                 android:id="@+id/listButton"
                 android:layout_toRightOf="@id/mapButton"
                 android:layout_toEndOf="@id/mapButton"

@@ -9,18 +9,25 @@
             style="@style/Toolbar_Navigation_RelativeLayout_Property"
             android:layout_marginLeft="@dimen/toolbar_margin"
             android:layout_marginStart="@dimen/toolbar_margin"
-            android:onClick="BackToLoginStartActivity">
+            android:onClick="BackToCreateAccountStartActivity">
             <ImageView
                 android:layout_width="@dimen/icon_as_button_size"
                 android:layout_height="@dimen/icon_as_button_size"
                 android:src="@drawable/ic_arrow_back_white_24dp"
                 android:layout_centerInParent="true"
-                android:onClick="BackToCreateAccountMain"
+                android:onClick="BackToCreateAccountStartActivity"
                 android:clickable="true"
                 android:focusable="true" />
         </RelativeLayout>
     </RelativeLayout>
     <include layout="@layout/personal_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/signupToolbar"
+        android:layout_marginTop="50dp"
+        />
+
+    <include layout="@layout/signup_player_details"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/signupToolbar"

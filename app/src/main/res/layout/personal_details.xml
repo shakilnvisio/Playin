@@ -1,8 +1,9 @@
 <RelativeLayout android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/loginCredentialContainer"
+    android:id="@+id/personalDetailsCon"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@color/colorPrimary">
+    android:background="@color/colorPrimary"
+    android:visibility="visible">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="40dp"
@@ -60,8 +61,6 @@
         android:layout_below="@id/passInstruction"
         android:text="@string/continue_button"
         android:id="@+id/loginSubmit"
-        android:onClick="Login"
-        android:clickable="true"
-        android:focusable="true" />
+        android:onClick="Continue" />
 
 </RelativeLayout>

@@ -31,6 +31,25 @@
     <string name="name">Name</string>
     <string name="password_instruction">Must be at least 8 characters, include special characters and numbers.</string>
     <string name="continue_button">Continue</string>
+    <string name="player_details">Player Details</string>
+    <string name="player_details_instruction">This information will help us personalize the experience and offer you the right games.</string>
+    <string name="gender">Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="invite_phone_contacts">Invite phone contacts</string>
+    <string name="sms_instruction">Playin will send SMS to each of player of the selected below. Additional Charges may apply.</string>
+    <!--Level-->
+    <string name="beginner">Beginner</string>
+    <string name="intermediate">Intermediate</string>
+    <string name="good">Good</string>
+    <string name="competitive">Competitive</string>
+    <string name="experience_level">What is your experience level?</string>
+    <!--Sport type-->
+    <string name="sport_play_most">Which sport you play most?</string>
+    <string name="football">Football</string>
+    <string name="soccer">Soccer</string>
+    <string name="basketball">Basketball</string>
+
     <!--Textview as a button green general-->
     <string name="invite_player">Invite Player</string>
     <string name="start_game">Start Game</string>
@@ -54,7 +73,12 @@
     <string name="tag_soon">soon</string>
     <string name="tag_public">public</string>
 
+
+    <!--Shared Preference-->
+    <string name="sharedPreferenceName">Playin</string>
+    <string name="sp_personal_details">PersonalDetails</string>
     <!--Demo-->
     <string name="select_a_player">Select a player below to transfer the ownership of the game to. After that you will not be able to manage the game details and players.</string>
+
 
 </resources>

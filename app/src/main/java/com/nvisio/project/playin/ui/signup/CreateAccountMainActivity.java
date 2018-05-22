@@ -1,5 +1,6 @@
 package com.nvisio.project.playin.ui.signup;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,6 +11,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.nvisio.project.playin.R;
+import com.nvisio.project.playin.ui.login.LoginStartActivity;
 
 public class CreateAccountMainActivity extends AppCompatActivity {
 
@@ -29,8 +31,18 @@ public class CreateAccountMainActivity extends AppCompatActivity {
     }
 
     public void EmailSignUp(View view) {
+        Intent intent=new Intent(CreateAccountMainActivity.this, CreateAccountInputActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+        overridePendingTransition(R.anim.right_to_left_enter,R.anim.right_to_left_exit);
     }
 
     public void GoToLogin(View view) {
+        Intent intent=new Intent(CreateAccountMainActivity.this, LoginStartActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+        overridePendingTransition(R.anim.right_to_left_enter,R.anim.right_to_left_exit);
     }
 }

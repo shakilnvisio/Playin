@@ -26,11 +26,11 @@
           <TextView
               style="@style/game_details_toolbar_button"
               android:id="@+id/playersInNumber"
-              android:background="@drawable/selected_button_right"
+              android:background="@drawable/selected_button_right_have_straight_line"
               android:onClick="MapClicked"/>
           <TextView
               style="@style/game_details_toolbar_button"
-              android:background="@drawable/unselected_button_left"
+              android:background="@drawable/unselected_button_left_have_straight_line"
               android:id="@+id/playerNeededNumber"
               android:layout_toRightOf="@id/playersInNumber"
               android:layout_toEndOf="@id/playersInNumber"

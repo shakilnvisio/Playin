@@ -4,6 +4,4 @@
     <solid android:color="@color/not_selected_button"/>
     <corners android:topLeftRadius="50dp"
         android:bottomLeftRadius="50dp"/>
-
-
 </shape>

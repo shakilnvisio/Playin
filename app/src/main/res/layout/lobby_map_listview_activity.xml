@@ -19,7 +19,7 @@
                 <TextView
                     style="@style/Toolbar_Tab_Button_Style_Regular"
                     android:text="@string/map"
-                    android:background="@drawable/unselected_button_right"
+                    android:background="@drawable/unselected_button_right_have_straight_line"
                     android:id="@+id/mapButton"
                     android:clickable="true"
                     android:layout_centerVertical="true"
@@ -28,7 +28,7 @@
                 <TextView
                     style="@style/Toolbar_Tab_Button_Style_Regular"
                     android:text="@string/list"
-                    android:background="@drawable/selected_button_left"
+                    android:background="@drawable/selected_button_left_have_straight_line"
                     android:id="@+id/listButton"
                     android:layout_centerVertical="true"
                     android:clickable="true"

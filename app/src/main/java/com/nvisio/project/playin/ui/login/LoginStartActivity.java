@@ -20,6 +20,7 @@ import com.facebook.GraphResponse;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.nvisio.project.playin.R;
+import com.nvisio.project.playin.ui.signup.CreateAccountMainActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -121,6 +122,14 @@ public class LoginStartActivity extends AppCompatActivity {
 
     public void LoginWithEmail(View view) {
         Intent intent=new Intent(LoginStartActivity.this, LoginInputActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+        overridePendingTransition(R.anim.right_to_left_enter,R.anim.right_to_left_exit);
+    }
+
+    public void GoToCreateAccount(View view) {
+        Intent intent=new Intent(LoginStartActivity.this, CreateAccountMainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
