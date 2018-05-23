@@ -5,31 +5,101 @@
     <RelativeLayout
         style="@style/Toolbar_Custom"
         android:id="@+id/smsToolbar">
-        <RelativeLayout
-            style="@style/Toolbar_Navigation_RelativeLayout_Property"
-            android:onClick="Previous">
-            <ImageView
-                style="@style/Toolbar_Icon_Properties"
-                android:src="@drawable/ic_arrow_back_white_24dp"
-                android:onClick="Previous"/>
-        </RelativeLayout>
-        <TextView
-            style="@style/TextView_Primary_Bold_Different_Color"
-            android:layout_centerInParent="true"
-            android:text="@string/invite_phone_contacts"
-            android:textColor="@color/white"
-            android:textSize="@dimen/headline_textview_size" />
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:weightSum="2"
+          android:id="@+id/searchCon"
+          android:orientation="horizontal"
+          android:visibility="gone">
+          <RelativeLayout
+              android:layout_width="0dp"
+              android:layout_height="match_parent"
+              android:layout_weight="1.4"
+              android:background="@drawable/edittext_background"
+              android:layout_margin="10dp">
+              <ImageView
+                  android:layout_width="24dp"
+                  android:layout_height="24dp"
+                  android:src="@drawable/search_grey_18dp"
+                  android:layout_centerVertical="true"
+                  android:id="@+id/searchIconInEditText"
+                  android:layout_marginLeft="10dp"
+                  android:layout_marginStart="10dp" />
+              <EditText
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:background="@android:color/transparent"
+                  android:id="@+id/searchContactEdit"
+                  android:hint="@string/search_contact"
+                  android:textSize="@dimen/secondary_textview_size"
+                  android:fontFamily="@font/open_sans_regular"
+                  android:textColorHint="@color/general_text_secondary"
+                  android:paddingLeft="5dp"
+                  android:layout_toRightOf="@id/searchIconInEditText"
+                  android:layout_toEndOf="@id/searchIconInEditText"
+                  android:layout_toLeftOf="@id/removeAllString"
+                  android:layout_toStartOf="@id/removeAllString"
+                  android:paddingRight="5dp"/>
+              <ImageView
+                  android:layout_width="24dp"
+                  android:layout_height="24dp"
+                  android:src="@drawable/close_edittext"
+                  android:layout_centerVertical="true"
+                  android:id="@+id/removeAllString"
+                  android:clickable="true"
+                  android:focusable="true"
+                  android:layout_alignParentRight="true"
+                  android:layout_alignParentEnd="true"
+                  android:layout_marginRight="10dp"
+                  android:layout_marginEnd="10dp"
+                  android:onClick="RemoveAllString"
+                  />
+          </RelativeLayout>
+
+          <TextView
+              android:layout_width="0dp"
+              android:layout_height="match_parent"
+              android:layout_weight="0.5"
+              android:layout_margin="10dp"
+              android:text="@string/cancel"
+              android:gravity="center"
+              android:fontFamily="@font/open_sans_bold"
+              android:textColor="@color/white"
+              android:background="@drawable/curved_background_unselect"/>
+      </LinearLayout>
 
         <RelativeLayout
-            style="@style/Toolbar_Navigation_RelativeLayout_Property"
-            android:onClick="Search"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true">
-            <ImageView
-                style="@style/Toolbar_Icon_Properties"
-                android:src="@drawable/ic_search_white_24dp"
-                android:onClick="Search"/>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+            <RelativeLayout
+                style="@style/Toolbar_Navigation_RelativeLayout_Property"
+                android:onClick="Previous">
+                <ImageView
+                    style="@style/Toolbar_Icon_Properties"
+                    android:src="@drawable/ic_arrow_back_white_24dp"
+                    android:onClick="Previous"/>
+            </RelativeLayout>
+            <TextView
+                style="@style/TextView_Primary_Bold_Different_Color"
+                android:layout_centerInParent="true"
+                android:text="@string/invite_phone_contacts"
+                android:textColor="@color/white"
+                android:textSize="@dimen/headline_textview_size" />
+
+            <RelativeLayout
+                style="@style/Toolbar_Navigation_RelativeLayout_Property"
+                android:onClick="Search"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true">
+                <ImageView
+                    style="@style/Toolbar_Icon_Properties"
+                    android:src="@drawable/ic_search_white_24dp"
+                    android:onClick="Search"/>
+            </RelativeLayout>
         </RelativeLayout>
+
     </RelativeLayout>
     <TextView
         android:layout_width="match_parent"

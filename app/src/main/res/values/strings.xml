@@ -38,6 +38,7 @@
     <string name="female">Female</string>
     <string name="invite_phone_contacts">Invite phone contacts</string>
     <string name="sms_instruction">Playin will send SMS to each of player of the selected below. Additional Charges may apply.</string>
+    <string name="search_contact">Search Contact</string>
     <!--Level-->
     <string name="beginner">Beginner</string>
     <string name="intermediate">Intermediate</string>

@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -79,21 +80,17 @@ public class PhoneContactAdapter extends RecyclerView.Adapter<PhoneContactAdapte
         @BindView(R.id.smsPlayerPhoneNumber)TextView phoneNumber;
         @BindView(R.id.smsAdd)ImageView add;
         @BindView(R.id.smsPlayerSelectionButton)RelativeLayout selectionLayout;
+        @BindView(R.id.smsBackground)RelativeLayout background;
 
         public RecyclerViewHolders(View itemView) {
             super(itemView);
             ButterKnife.bind(this,itemView);
             selectionLayout.setOnClickListener(this);
             add.setOnClickListener(this);
-            //itemView.setOnClickedListener(this);
-            //initialise the Views here and set the views where i want to have onClicked event option
-            //i.e textView=(Textview)findViewById(R.id.text);
-            //
         }
 
         @Override
         public void onClick(View view) {
-            //phoneContactNumberListener.PhoneNumberSelected(getAdapterPosition());
             int pos=getAdapterPosition();
             String number=Items.get(pos).getNumber();
             phoneContactNumberListener.PhoneNumberSelected(number);

@@ -85,4 +85,7 @@ public class InviteBySmsActivity extends AppCompatActivity implements PhoneConta
         }
 
     }
+
+    public void RemoveAllString(View view) {
+    }
 }
