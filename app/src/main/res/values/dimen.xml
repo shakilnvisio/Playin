@@ -58,4 +58,8 @@
     <!--Create Account-->
     <dimen name="default_margin_player_details">10dp</dimen>
     <dimen name="player_details_button_container_height_small_button">30dp</dimen>
+
+    <!--Create Location-->
+    <dimen name="margin_bottom_from_create_location">10dp</dimen>
+    <dimen name="save_button_width">70dp</dimen>
 </resources>

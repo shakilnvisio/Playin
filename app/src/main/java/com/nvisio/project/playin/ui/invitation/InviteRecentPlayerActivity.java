@@ -10,24 +10,26 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Toast;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.nvisio.project.playin.R;
 import com.nvisio.project.playin.adapter.InvitePlayerListAdapter;
 import com.nvisio.project.playin.demo.PhoneNumberDemo;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
-public class InviteBySmsActivity extends AppCompatActivity implements InvitePlayerListAdapter.PhoneContactNumberListener {
+public class InviteRecentPlayerActivity extends AppCompatActivity implements InvitePlayerListAdapter.PhoneContactNumberListener{
 
-    @BindView(R.id.smsRecyclerview)RecyclerView recyclerView;
+    @BindView(R.id.recentSearchCon)LinearLayout searchLayout;
+    @BindView(R.id.recentDefault)RelativeLayout defaultToolbarLayout;
+    @BindView(R.id.recentSearchContactEdit)EditText searchPlayer;
+    @BindView(R.id.recentRecycler)RecyclerView recyclerView;
+    @BindView(R.id.invitePlayerRecent)TextView invitePlayerButton;
 
     private InvitePlayerListAdapter adapter;
-    private List<String>selectedPhoneNumber;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,12 +39,9 @@ public class InviteBySmsActivity extends AppCompatActivity implements InvitePlay
                     window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
                     window.setStatusBarColor(ContextCompat.getColor(this,R.color.colorPrimary) );
                 }
-        setContentView(R.layout.contact_list_sms_layout);
-        ButterKnife.bind(this);
-        selectedPhoneNumber=new ArrayList<>();
+        setContentView(R.layout.invitation_recent_player_activity);
         recyclerviewInit();
     }
-
     private void recyclerviewInit(){
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -59,9 +58,10 @@ public class InviteBySmsActivity extends AppCompatActivity implements InvitePlay
         recyclerView.setAdapter(adapter);
 
     }
+    public void RemoveAllString(View view) {
+    }
 
-
-    public void InvitePlayer(View view) {
+    public void CancelSearchPanel(View view) {
     }
 
     public void Previous(View view) {
@@ -70,22 +70,11 @@ public class InviteBySmsActivity extends AppCompatActivity implements InvitePlay
     public void Search(View view) {
     }
 
-    @Override
-    public void PhoneNumberSelected(String number) {
-        Toast.makeText(this, ""+number, Toast.LENGTH_SHORT).show();
-        if (selectedPhoneNumber.size()>0){
-            for (int i = 0; i <selectedPhoneNumber.size() ; i++) {
-                if (selectedPhoneNumber.get(i).equals(number)){
-
-                }
-                else{
-
-                }
-            }
-        }
-
+    public void InvitePlayer(View view) {
     }
 
-    public void RemoveAllString(View view) {
+    @Override
+    public void PhoneNumberSelected(String number) {
+
     }
 }

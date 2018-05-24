@@ -39,12 +39,18 @@
     <string name="invite_phone_contacts">Invite phone contacts</string>
     <string name="sms_instruction">Playin will send SMS to each of player of the selected below. Additional Charges may apply.</string>
     <string name="search_contact">Search Contact</string>
+    <string name="create_location">Create Location</string>
+    <string name="save">Save</string>
+    <string name="enter_location_name">Enter Location Name</string>
+
+
     <!--Level-->
     <string name="beginner">Beginner</string>
     <string name="intermediate">Intermediate</string>
     <string name="good">Good</string>
     <string name="competitive">Competitive</string>
     <string name="experience_level">What is your experience level?</string>
+    <string name="all">All</string>
     <!--Sport type-->
     <string name="sport_play_most">Which sport you play most?</string>
     <string name="football">Football</string>
@@ -53,6 +59,8 @@
 
     <!--Textview as a button green general-->
     <string name="invite_player">Invite Player</string>
+    <string name="invite_recent_player">Invite Recent Players</string>
+    <string name="recent_player_ins">Playin will send notification to each of the selected people below.</string>
     <string name="start_game">Start Game</string>
     <string name="end_game">End Game</string>
     <string name="join_game">Join Game</string>
@@ -74,7 +82,10 @@
     <string name="tag_soon">soon</string>
     <string name="tag_public">public</string>
 
-
+    <!--Create Game-->
+    <string name="create_game_part_two">Create Game 2/2</string>
+    <string name="max_player">Maximum Players</string>
+    <string name="level">Level</string>
     <!--Shared Preference-->
     <string name="sharedPreferenceName">Playin</string>
     <string name="sp_personal_details">PersonalDetails</string>

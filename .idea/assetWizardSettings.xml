@@ -23,7 +23,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/action/ic_search_black_24dp.xml" />
+                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/content/ic_remove_circle_outline_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -33,12 +33,10 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="color" value="9ba6b9" />
-                            <entry key="height" value="18" />
-                            <entry key="outputName" value="search_grey_18dp" />
+                            <entry key="color" value="29ccb1" />
+                            <entry key="outputName" value="minus_green_24dp" />
                             <entry key="overrideSize" value="true" />
                             <entry key="sourceFile" value="C:\Users\USER" />
-                            <entry key="width" value="18" />
                           </map>
                         </option>
                       </PersistentState>

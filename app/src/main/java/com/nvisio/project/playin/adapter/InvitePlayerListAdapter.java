@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -19,7 +18,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class PhoneContactAdapter extends RecyclerView.Adapter<PhoneContactAdapter.RecyclerViewHolders> {
+public class InvitePlayerListAdapter extends RecyclerView.Adapter<InvitePlayerListAdapter.RecyclerViewHolders> {
     private final Context context;
     private List<PhoneContactModel> Items;
     private PhoneContactNumberListener phoneContactNumberListener;
@@ -33,7 +32,7 @@ public class PhoneContactAdapter extends RecyclerView.Adapter<PhoneContactAdapte
 
     }
 
-    public PhoneContactAdapter(Context context, List<PhoneContactModel> items) {
+    public InvitePlayerListAdapter(Context context, List<PhoneContactModel> items) {
         this.Items = items;
         this.context = context;
     }
@@ -45,7 +44,7 @@ public class PhoneContactAdapter extends RecyclerView.Adapter<PhoneContactAdapte
     @Override
     public RecyclerViewHolders onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View layoutView = LayoutInflater.from(parent.getContext()).inflate(R.layout.contact_list_sms_single_layout, null);
+        View layoutView = LayoutInflater.from(parent.getContext()).inflate(R.layout.invitation_list_single_layout, null);
         RecyclerViewHolders rcv = new RecyclerViewHolders(layoutView);
         return rcv;
     }
