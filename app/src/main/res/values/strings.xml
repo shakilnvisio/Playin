@@ -36,6 +36,7 @@
     <string name="gender">Gender</string>
     <string name="male">Male</string>
     <string name="female">Female</string>
+    <string name="coed">Co-ed</string>
     <string name="invite_phone_contacts">Invite phone contacts</string>
     <string name="sms_instruction">Playin will send SMS to each of player of the selected below. Additional Charges may apply.</string>
     <string name="search_contact">Search Contact</string>
@@ -86,6 +87,13 @@
     <string name="create_game_part_two">Create Game 2/2</string>
     <string name="max_player">Maximum Players</string>
     <string name="level">Level</string>
+    <string name="secondary_text">This information will help us notify the right people for your game.</string>
+    <string name="privacy_secondary_text">Public games are open for anybody to join. Private games are visible only to you and invited friends.</string>
+    <string name="privacy">Privacy</string>
+    <string name="public_text">Public</string>
+    <string name="private_text">Private</string>
+    <string name="description">Description</string>
+    <string name="description_hint">Add any additional info, links, numbers...</string>
     <!--Shared Preference-->
     <string name="sharedPreferenceName">Playin</string>
     <string name="sp_personal_details">PersonalDetails</string>

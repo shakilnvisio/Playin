@@ -172,7 +172,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/password_instruction"
+                android:text="@string/secondary_text"
                 android:id="@+id/passInstruction"
                 android:fontFamily="@font/open_sans_semibold"
                 android:textSize="@dimen/lowest_textview_size"
@@ -180,7 +180,146 @@
                 android:layout_below="@id/levelSecondPart"
                 android:textColor="@color/general_text_secondary" />
         </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/genderCon"
+            android:layout_below="@id/levelCon"
+            android:layout_marginTop="30dp">
 
+            <TextView
+                style="@style/playerDetailSectionHeadlineTextview"
+                android:text="@string/gender"
+                android:id="@+id/genderHeadline"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/player_details_button_container_height_small_button"
+                android:layout_below="@id/genderHeadline"
+                android:layout_margin="@dimen/default_margin_player_details"
+                android:id="@+id/genderButtonCon"
+                android:weightSum="3"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/coed"
+                    android:id="@+id/coedGender"
+                    android:background="@drawable/unselected_button_right_have_straight_line"
+                    style="@style/playerDetailsButtonTextview"
+                    android:onClick="MalePressed"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/male"
+                    android:id="@+id/maleGender"
+                    android:background="@drawable/unselected_middle_button_with_no_radius"
+                    style="@style/playerDetailsButtonTextview"
+                    android:onClick="MalePressed"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/female"
+                    android:id="@+id/femaleGender"
+                    android:background="@drawable/unselected_button_left_have_straight_line"
+                    style="@style/playerDetailsButtonTextview"
+                    android:onClick="FemalePressed"/>
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/secondary_text"
+                android:fontFamily="@font/open_sans_semibold"
+                android:textSize="@dimen/lowest_textview_size"
+                android:gravity="center"
+                android:layout_below="@id/genderButtonCon"
+                android:textColor="@color/general_text_secondary" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/privacyCon"
+            android:layout_below="@id/genderCon"
+            android:layout_marginTop="30dp">
+
+            <TextView
+                style="@style/playerDetailSectionHeadlineTextview"
+                android:text="@string/privacy"
+                android:id="@+id/privacyHeadline"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/player_details_button_container_height_small_button"
+                android:layout_below="@id/privacyHeadline"
+                android:layout_margin="@dimen/default_margin_player_details"
+                android:id="@+id/privacyButtonCon"
+                android:weightSum="2"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/public_text"
+                    android:id="@+id/publicButton"
+                    android:background="@drawable/unselected_button_right_have_straight_line"
+                    style="@style/playerDetailsButtonTextview"
+                    android:onClick="PublicPressed"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/private_text"
+                    android:id="@+id/privateButton"
+                    android:background="@drawable/unselected_button_left_have_straight_line"
+                    style="@style/playerDetailsButtonTextview"
+                    android:onClick="PrivatePressed"/>
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/privacy_secondary_text"
+                android:fontFamily="@font/open_sans_semibold"
+                android:textSize="@dimen/lowest_textview_size"
+                android:gravity="center"
+                android:layout_below="@id/privacyButtonCon"
+                android:textColor="@color/general_text_secondary" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/privacyCon"
+            android:id="@+id/descriptionCon"
+            android:layout_marginTop="@dimen/default_margin_player_details">
+            <TextView
+                style="@style/playerDetailSectionHeadlineTextview"
+                android:text="@string/description"
+                android:id="@+id/descriptioHeadline"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:id="@+id/description"
+                android:hint="@string/description_hint"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/secondary_textview_size"
+                android:paddingLeft="@dimen/default_margin_player_details"
+                android:paddingRight="@dimen/default_margin_player_details"
+                android:paddingTop="@dimen/default_margin_player_details"
+                android:gravity="center_horizontal"
+                android:layout_below="@id/descriptioHeadline"
+                android:layout_margin="@dimen/default_margin_player_details"
+                android:background="@drawable/edittext_background"
+                android:inputType="textMultiLine" />
+        </RelativeLayout>
+            <TextView
+                style="@style/Textview_As_A_Button_General_Green"
+                android:text="@string/create_a_game"
+                android:layout_below="@id/descriptionCon"
+                android:onClick="CreateGamePressed"/>
     </RelativeLayout>
 
 </ScrollView>
